@@ -1,7 +1,4 @@
 I created a custom VPC called Interview-VPC with the CIDR block 10.0.0.0/16 to give myself a large and flexible private network range. This allowed me to divide the network into smaller sections without running out of IP addresses in the future.
-
 Inside this VPC, I created four subnets to clearly separate public and private resources. Two of them are public subnets — 10.0.1.0/24 and 10.0.2.0/24. These subnets are meant for resources that need internet access, such as web servers or load balancers. They are connected to an Internet Gateway, which allows incoming and outgoing traffic from the internet.
-
 The other two are private subnets — 10.0.101.0/24 and 10.0.102.0/24. These subnets are used for more secure resources like databases and backend servers. They do not allow direct access from the internet. Instead, they use a NAT Gateway placed in one of the public subnets so they can safely access the internet only when needed (for updates or downloads), without being directly exposed.
-
 Overall, I designed this VPC structure to follow real-world cloud architecture best practices by keeping public and private resources separated, improving both security and performance while keeping the network simple and scalable.
